@@ -37,4 +37,27 @@ class LetterBoxView: UIView {
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
+    
+    func updateView(leterBox: LetterBox?) {
+        updateLabel(letter: letterBox?.letter)
+        updateBackground(status: leterBox?.status)
+    }
+    
+    private func updateLabel(letter: String?) {
+        letterLabel.text = letter?.uppercased()
+    }
+    
+    private func updateBackground(status: LetterEvaluation?) {
+        switch letterBox?.status {
+        case .wrongLetter:
+            contentView.backgroundColor = .gray
+        case .rightLetterOutOfPlace:
+            contentView.backgroundColor = .yellow
+        case .rightLetterOnRightPlace:
+            contentView.backgroundColor = .green
+            
+        default:
+            contentView.backgroundColor = .clear
+        }
+    }
 }
