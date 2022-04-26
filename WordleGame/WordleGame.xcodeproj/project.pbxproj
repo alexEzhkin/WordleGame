@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FA0E8C86281899BE000E9EB3 /* KeyboardSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E8C85281899BE000E9EB3 /* KeyboardSymbol.swift */; };
+		FA0E8C8828189BF3000E9EB3 /* KeyboardBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E8C8728189BF3000E9EB3 /* KeyboardBox.swift */; };
+		FA0E8C8B28189C31000E9EB3 /* KeyboardBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E8C8A28189C31000E9EB3 /* KeyboardBoxView.swift */; };
 		FA2D775D28141C2900D9600F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D775C28141C2900D9600F /* AppDelegate.swift */; };
 		FA2D775F28141C2900D9600F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D775E28141C2900D9600F /* SceneDelegate.swift */; };
 		FA2D776128141C2900D9600F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D776028141C2900D9600F /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		FA0E8C85281899BE000E9EB3 /* KeyboardSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSymbol.swift; sourceTree = "<group>"; };
+		FA0E8C8728189BF3000E9EB3 /* KeyboardBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBox.swift; sourceTree = "<group>"; };
+		FA0E8C8A28189C31000E9EB3 /* KeyboardBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBoxView.swift; sourceTree = "<group>"; };
 		FA2D775928141C2900D9600F /* WordleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2D775C28141C2900D9600F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA2D775E28141C2900D9600F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0E8C8928189C06000E9EB3 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FA0E8C8A28189C31000E9EB3 /* KeyboardBoxView.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
 		FA2D775028141C2900D9600F = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +94,7 @@
 		FA6652CE28154C96004DE40A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA0E8C8928189C06000E9EB3 /* Keyboard */,
 				FA6652CF28154CA6004DE40A /* Letter */,
 			);
 			path = Views;
@@ -102,6 +115,7 @@
 				FA6652D528154D45004DE40A /* LetterBox.swift */,
 				FA2F69B1281704D000949BFC /* LetterEvaluation.swift */,
 				FA0E8C85281899BE000E9EB3 /* KeyboardSymbol.swift */,
+				FA0E8C8728189BF3000E9EB3 /* KeyboardBox.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,9 +195,11 @@
 				FA2D776128141C2900D9600F /* ViewController.swift in Sources */,
 				FA2F69B2281704D000949BFC /* LetterEvaluation.swift in Sources */,
 				FA2D775D28141C2900D9600F /* AppDelegate.swift in Sources */,
+				FA0E8C8B28189C31000E9EB3 /* KeyboardBoxView.swift in Sources */,
 				FA0E8C86281899BE000E9EB3 /* KeyboardSymbol.swift in Sources */,
 				FA2D775F28141C2900D9600F /* SceneDelegate.swift in Sources */,
 				FA6652D82815561F004DE40A /* LetterBoxView.swift in Sources */,
+				FA0E8C8828189BF3000E9EB3 /* KeyboardBox.swift in Sources */,
 				FA6652D628154D45004DE40A /* LetterBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
