@@ -48,17 +48,7 @@ class LetterBoxView: UIView {
     }
     
     private func updateBackground(status: LetterEvaluation?) {
-        switch letterBox?.status {
-        case .wrongLetter:
-            contentView.backgroundColor = .gray
-        case .rightLetterOutOfPlace:
-            contentView.backgroundColor = .yellow
-        case .rightLetterOnRightPlace:
-            contentView.backgroundColor = .green
-            
-        default:
-            contentView.backgroundColor = .clear
-        }
+        contentView.backgroundColor = status?.backgroundColor ?? .clear
     }
 }
 
