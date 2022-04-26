@@ -11,9 +11,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var keyboardContainer: KeyboardView!
     
+    private let keyboardManager = KeyboardManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        keyboardContainer.updateKeyboardSymbols(keyboardManager.keyboardSymbols)
     }
 
 
