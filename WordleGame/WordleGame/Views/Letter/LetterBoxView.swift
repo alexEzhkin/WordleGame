@@ -61,3 +61,24 @@ class LetterBoxView: UIView {
         }
     }
 }
+
+extension LetterEvaluation {
+    var backgroundColor: UIColor {
+        switch self {
+        case .wrongLetter:
+            return .gray
+            
+        case .rightLetterOutOfPlace:
+            return .yellow
+            
+        case .rightLetterOnRightPlace:
+            return .green
+        }
+    }
+}
+
+extension Optional where Wrapped == LetterEvaluation {
+    var backgroundColor: UIColor {
+        self?.backgroundColor ?? .clear
+    }
+}
