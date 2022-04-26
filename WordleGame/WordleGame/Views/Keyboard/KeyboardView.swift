@@ -32,7 +32,7 @@ class KeyboardView: UIStackView {
         self.axis = .vertical
         self.alignment = .center
         self.distribution = .fillEqually
-        self.spacing = 7
+        self.spacing = 4
         
         createKeyboard()
     }
@@ -43,7 +43,7 @@ class KeyboardView: UIStackView {
             stackView.axis = .horizontal
             stackView.alignment = .fill
             stackView.distribution = .fill
-            stackView.spacing = 7
+            stackView.spacing = 4
             
             self.addArrangedSubview(stackView)
             

@@ -39,17 +39,19 @@ class KeyboardBoxView: UIButton {
     }
     
     private func setTitleFont() {
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 11, weight: .bold)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
     }
     
     private func setCornerRadius() {
-        self.layer.cornerRadius = 4
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.black.cgColor
     }
     
     private func addConstrains() {
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let multiplier = keyboardBox.symbol == .delete || keyboardBox.symbol == .enter ? 0.75 : 0.5
+        let multiplier = keyboardBox.symbol == .delete || keyboardBox.symbol == .enter ? 1 : 0.6
 
         NSLayoutConstraint.activate([
             self.widthAnchor.constraint(equalTo: self.heightAnchor, multiplier: multiplier)
