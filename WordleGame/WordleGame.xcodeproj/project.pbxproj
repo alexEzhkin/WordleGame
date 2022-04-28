@@ -117,13 +117,29 @@
 		FA6652D428154D34004DE40A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA6652D528154D45004DE40A /* LetterBox.swift */,
-				FA2F69B1281704D000949BFC /* LetterEvaluation.swift */,
-				FA0E8C85281899BE000E9EB3 /* KeyboardSymbol.swift */,
-				FA0E8C8728189BF3000E9EB3 /* KeyboardBox.swift */,
-				FA0E8C8E28189FD1000E9EB3 /* KeyboardManager.swift */,
+				FA854F18281AD98500642847 /* Letter */,
+				FA854F17281AD96F00642847 /* Keyboard */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FA854F17281AD96F00642847 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FA0E8C8E28189FD1000E9EB3 /* KeyboardManager.swift */,
+				FA0E8C8728189BF3000E9EB3 /* KeyboardBox.swift */,
+				FA0E8C85281899BE000E9EB3 /* KeyboardSymbol.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		FA854F18281AD98500642847 /* Letter */ = {
+			isa = PBXGroup;
+			children = (
+				FA6652D528154D45004DE40A /* LetterBox.swift */,
+				FA2F69B1281704D000949BFC /* LetterEvaluation.swift */,
+			);
+			path = Letter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

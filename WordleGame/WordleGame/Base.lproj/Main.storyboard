@@ -16,17 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PBZ-Vt-upS" customClass="KeyboardView" customModule="WordleGame" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PBZ-Vt-upS" customClass="KeyboardView" customModule="WordleGame" customModuleProvider="target">
                                 <rect key="frame" x="15" y="621" width="384" height="221"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="PBZ-Vt-upS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="577" id="5Lx-qQ-9pd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PBZ-Vt-upS" secondAttribute="bottom" constant="20" id="FE6-I0-bpB"/>
                             <constraint firstItem="PBZ-Vt-upS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="P5F-XY-mBk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PBZ-Vt-upS" secondAttribute="trailing" constant="15" id="P82-lk-fsM"/>
                             <constraint firstItem="PBZ-Vt-upS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="dnU-PC-WvI"/>
                         </constraints>
                     </view>
