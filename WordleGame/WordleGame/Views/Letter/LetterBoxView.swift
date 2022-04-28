@@ -48,16 +48,27 @@ class LetterBoxView: UIView {
     }
     
     private func updateBackground(status: LetterEvaluation?) {
-        switch letterBox?.status {
+        contentView.backgroundColor = status?.backgroundColor ?? .clear
+    }
+}
+
+extension LetterEvaluation {
+    var backgroundColor: UIColor {
+        switch self {
         case .wrongLetter:
-            contentView.backgroundColor = .gray
-        case .rightLetterOutOfPlace:
-            contentView.backgroundColor = .yellow
-        case .rightLetterOnRightPlace:
-            contentView.backgroundColor = .green
+            return .gray
             
-        default:
-            contentView.backgroundColor = .clear
+        case .rightLetterOutOfPlace:
+            return .yellow
+            
+        case .rightLetterOnRightPlace:
+            return .green
         }
+    }
+}
+
+extension Optional where Wrapped == LetterEvaluation {
+    var backgroundColor: UIColor {
+        self?.backgroundColor ?? .clear
     }
 }

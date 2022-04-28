@@ -16,23 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ETv-o5-Dbe">
-                                <rect key="frame" x="75" y="205" width="264" height="213"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kMs-R1-UrT" customClass="LetterBoxView" customModule="WordleGame" customModuleProvider="target">
-                                        <rect key="frame" x="91" y="72" width="83" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PBZ-Vt-upS" customClass="KeyboardView" customModule="WordleGame" customModuleProvider="target">
+                                <rect key="frame" x="15" y="621" width="384" height="221"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PBZ-Vt-upS" secondAttribute="bottom" constant="20" id="FE6-I0-bpB"/>
+                            <constraint firstItem="PBZ-Vt-upS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="P5F-XY-mBk"/>
+                            <constraint firstItem="PBZ-Vt-upS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="dnU-PC-WvI"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="letter" destination="kMs-R1-UrT" id="Kzl-DE-8L5"/>
+                        <outlet property="keyboardContainer" destination="PBZ-Vt-upS" id="5uA-Zy-3Hu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
