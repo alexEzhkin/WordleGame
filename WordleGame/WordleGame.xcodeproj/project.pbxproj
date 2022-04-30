@@ -19,6 +19,7 @@
 		FA2D776628141C2D00D9600F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2D776528141C2D00D9600F /* Assets.xcassets */; };
 		FA2D776928141C2D00D9600F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2D776728141C2D00D9600F /* LaunchScreen.storyboard */; };
 		FA2F69B2281704D000949BFC /* LetterEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F69B1281704D000949BFC /* LetterEvaluation.swift */; };
+		FA45E843281D53600066C646 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45E842281D53600066C646 /* UIButton + Extension.swift */; };
 		FA6652D628154D45004DE40A /* LetterBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6652D528154D45004DE40A /* LetterBox.swift */; };
 		FA6652D82815561F004DE40A /* LetterBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6652D72815561F004DE40A /* LetterBoxView.swift */; };
 		FA6652DA28155630004DE40A /* LetterBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6652D928155630004DE40A /* LetterBoxView.xib */; };
@@ -39,6 +40,7 @@
 		FA2D776828141C2D00D9600F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA2D776A28141C2D00D9600F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA2F69B1281704D000949BFC /* LetterEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterEvaluation.swift; sourceTree = "<group>"; };
+		FA45E842281D53600066C646 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		FA6652D528154D45004DE40A /* LetterBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBox.swift; sourceTree = "<group>"; };
 		FA6652D72815561F004DE40A /* LetterBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBoxView.swift; sourceTree = "<group>"; };
 		FA6652D928155630004DE40A /* LetterBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LetterBoxView.xib; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		FA2D775B28141C2900D9600F /* WordleGame */ = {
 			isa = PBXGroup;
 			children = (
+				FA45E841281D52EC0066C646 /* Extensions */,
 				FA6652D428154D34004DE40A /* Models */,
 				FA6652CE28154C96004DE40A /* Views */,
 				FA2D775C28141C2900D9600F /* AppDelegate.swift */,
@@ -94,6 +97,14 @@
 				FA2D776A28141C2D00D9600F /* Info.plist */,
 			);
 			path = WordleGame;
+			sourceTree = "<group>";
+		};
+		FA45E841281D52EC0066C646 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA45E842281D53600066C646 /* UIButton + Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FA6652CE28154C96004DE40A /* Views */ = {
@@ -225,6 +236,7 @@
 				FA6652D82815561F004DE40A /* LetterBoxView.swift in Sources */,
 				FA0E8C8828189BF3000E9EB3 /* KeyboardBox.swift in Sources */,
 				FA6652D628154D45004DE40A /* LetterBox.swift in Sources */,
+				FA45E843281D53600066C646 /* UIButton + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
