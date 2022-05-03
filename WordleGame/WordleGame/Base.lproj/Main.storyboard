@@ -19,17 +19,25 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PBZ-Vt-upS" customClass="KeyboardView" customModule="WordleGame" customModuleProvider="target">
                                 <rect key="frame" x="15" y="621" width="384" height="221"/>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bum-4E-aTm" customClass="LetterView" customModule="WordleGame" customModuleProvider="target">
+                                <rect key="frame" x="15" y="74" width="384" height="284"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Bum-4E-aTm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="A8L-mJ-rHZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PBZ-Vt-upS" secondAttribute="bottom" constant="20" id="FE6-I0-bpB"/>
                             <constraint firstItem="PBZ-Vt-upS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="P5F-XY-mBk"/>
+                            <constraint firstItem="Bum-4E-aTm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="SNX-cP-8WT"/>
+                            <constraint firstItem="Bum-4E-aTm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SaX-U1-yir"/>
                             <constraint firstItem="PBZ-Vt-upS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="dnU-PC-WvI"/>
+                            <constraint firstItem="PBZ-Vt-upS" firstAttribute="top" secondItem="Bum-4E-aTm" secondAttribute="bottom" constant="30" id="lqb-DZ-25s"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="keyboardContainer" destination="PBZ-Vt-upS" id="5uA-Zy-3Hu"/>
+                        <outlet property="letterContainer" destination="Bum-4E-aTm" id="1Xe-Nz-gjp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

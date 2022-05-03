@@ -22,9 +22,9 @@
 		FA45E843281D53600066C646 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45E842281D53600066C646 /* UIButton + Extension.swift */; };
 		FA6652D628154D45004DE40A /* LetterBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6652D528154D45004DE40A /* LetterBox.swift */; };
 		FA6652D82815561F004DE40A /* LetterBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6652D72815561F004DE40A /* LetterBoxView.swift */; };
-		FA6652DA28155630004DE40A /* LetterBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6652D928155630004DE40A /* LetterBoxView.xib */; };
 		FAAFE7CC282141FA0016A7B5 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFE7CB282141FA0016A7B5 /* GameManager.swift */; };
 		FAAFE7CF282143950016A7B5 /* AllowedWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAAFE7CE282143950016A7B5 /* AllowedWords.txt */; };
+		FAAFE7D128217B720016A7B5 /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFE7D028217B720016A7B5 /* LetterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,9 +45,9 @@
 		FA45E842281D53600066C646 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		FA6652D528154D45004DE40A /* LetterBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBox.swift; sourceTree = "<group>"; };
 		FA6652D72815561F004DE40A /* LetterBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBoxView.swift; sourceTree = "<group>"; };
-		FA6652D928155630004DE40A /* LetterBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LetterBoxView.xib; sourceTree = "<group>"; };
 		FAAFE7CB282141FA0016A7B5 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		FAAFE7CE282143950016A7B5 /* AllowedWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AllowedWords.txt; path = "../../../../../Documents/Курсы iOS/Занятие 17/AllowedWords.txt"; sourceTree = "<group>"; };
+		FAAFE7D028217B720016A7B5 /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6652D72815561F004DE40A /* LetterBoxView.swift */,
-				FA6652D928155630004DE40A /* LetterBoxView.xib */,
+				FAAFE7D028217B720016A7B5 /* LetterView.swift */,
 			);
 			path = Letter;
 			sourceTree = "<group>";
@@ -236,7 +236,6 @@
 				FA2D776928141C2D00D9600F /* LaunchScreen.storyboard in Resources */,
 				FAAFE7CF282143950016A7B5 /* AllowedWords.txt in Resources */,
 				FA2D776628141C2D00D9600F /* Assets.xcassets in Resources */,
-				FA6652DA28155630004DE40A /* LetterBoxView.xib in Resources */,
 				FA2D776428141C2900D9600F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAFE7D128217B720016A7B5 /* LetterView.swift in Sources */,
 				FA2D776128141C2900D9600F /* GameViewController.swift in Sources */,
 				FA2F69B2281704D000949BFC /* LetterEvaluation.swift in Sources */,
 				FA2D775D28141C2900D9600F /* AppDelegate.swift in Sources */,
