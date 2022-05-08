@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class LetterBoxView: UITextField {
+class LetterBoxView: UILabel {
     
     private var letterBox: LetterBox?
     
@@ -34,7 +34,7 @@ class LetterBoxView: UITextField {
     }
     
     private func setFont() {
-        self.maxLength = 1
+//        self.maxLength = 1
         self.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         self.textAlignment = .center
     }
@@ -60,6 +60,7 @@ class LetterBoxView: UITextField {
     
     private func updateLabel(letter: String?) {
         self.text = letter?.uppercased()
+        self.textColor = .blue
     }
     
     private func updateBackground(status: LetterEvaluation?) {

@@ -22,6 +22,7 @@
 		FA45E843281D53600066C646 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45E842281D53600066C646 /* UIButton + Extension.swift */; };
 		FA6652D628154D45004DE40A /* LetterBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6652D528154D45004DE40A /* LetterBox.swift */; };
 		FA6652D82815561F004DE40A /* LetterBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6652D72815561F004DE40A /* LetterBoxView.swift */; };
+		FAA3AD40282799E800F412D8 /* KeyboardButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3AD3F282799E800F412D8 /* KeyboardButtonDelegate.swift */; };
 		FAAFE7CC282141FA0016A7B5 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFE7CB282141FA0016A7B5 /* GameManager.swift */; };
 		FAAFE7CF282143950016A7B5 /* AllowedWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAAFE7CE282143950016A7B5 /* AllowedWords.txt */; };
 		FAAFE7D128217B720016A7B5 /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFE7D028217B720016A7B5 /* LetterView.swift */; };
@@ -46,6 +47,7 @@
 		FA45E842281D53600066C646 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		FA6652D528154D45004DE40A /* LetterBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBox.swift; sourceTree = "<group>"; };
 		FA6652D72815561F004DE40A /* LetterBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBoxView.swift; sourceTree = "<group>"; };
+		FAA3AD3F282799E800F412D8 /* KeyboardButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonDelegate.swift; sourceTree = "<group>"; };
 		FAAFE7CB282141FA0016A7B5 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		FAAFE7CE282143950016A7B5 /* AllowedWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AllowedWords.txt; path = "../../../../../Documents/Курсы iOS/Занятие 17/AllowedWords.txt"; sourceTree = "<group>"; };
 		FAAFE7D028217B720016A7B5 /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				FAAFE7CD282143750016A7B5 /* Resources */,
+				FAA3AD3D282799B400F412D8 /* Delegates */,
 				FA45E841281D52EC0066C646 /* Extensions */,
 				FA6652D428154D34004DE40A /* Models */,
 				FA6652CE28154C96004DE40A /* Views */,
@@ -160,6 +163,22 @@
 				FA2F69B1281704D000949BFC /* LetterEvaluation.swift */,
 			);
 			path = Letter;
+			sourceTree = "<group>";
+		};
+		FAA3AD3D282799B400F412D8 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				FAA3AD3E282799C400F412D8 /* Keyboard */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		FAA3AD3E282799C400F412D8 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FAA3AD3F282799E800F412D8 /* KeyboardButtonDelegate.swift */,
+			);
+			path = Keyboard;
 			sourceTree = "<group>";
 		};
 		FAAFE7CA282141EB0016A7B5 /* Game */ = {
@@ -265,6 +284,7 @@
 				FA6652D628154D45004DE40A /* LetterBox.swift in Sources */,
 				FA45E843281D53600066C646 /* UIButton + Extension.swift in Sources */,
 				FAAFE7CC282141FA0016A7B5 /* GameManager.swift in Sources */,
+				FAA3AD40282799E800F412D8 /* KeyboardButtonDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +434,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SU5BXYR747;
+				DEVELOPMENT_TEAM = F8Y22AJ6G5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WordleGame/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -444,7 +464,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SU5BXYR747;
+				DEVELOPMENT_TEAM = F8Y22AJ6G5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WordleGame/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

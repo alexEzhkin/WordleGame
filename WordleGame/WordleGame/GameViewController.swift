@@ -12,22 +12,34 @@ class GameViewController: UIViewController {
     @IBOutlet weak var keyboardContainer: KeyboardView!
     @IBOutlet weak var letterContainer: LetterView!
     
+    private var gameManager = GameManager()
     private let keyboardManager = KeyboardManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        letterContainer.updateLetterBoxSymbols(gameManager.gameField)
+        
+        keyboardContainer.delegate = self
         keyboardContainer.updateKeyboardSymbols(keyboardManager.keyboardSymbols)
-        letterContainer.updateLetterBoxSymbols(GameManager.init(randomWord: getRandomWordFromTXTFile()).letterBoxArray)
+        
+    }
+}
+
+extension GameViewController: KeyboardButtonDelegate {
+    func handleButtonTap(_ symbol: KeyboardSymbol) {
+        gameManager.handleKeyboardSymbolEnter(symbol)
+        
+        letterContainer.updateLetterBoxSymbols(gameManager.gameField)
     }
     
-    func getRandomWordFromTXTFile() -> String {
-        guard let path = Bundle.main.path(forResource: "AllowedWords", ofType: "txt"),
-              let allowedWordsArray = try? String(contentsOfFile: path, encoding: String.Encoding.utf8).split(separator: "\n") else { return ""}
-        let allowedWords = Set(allowedWordsArray)
-        let randomWord = allowedWords.randomElement()
-        
-        return String(randomWord ?? "")
+    private func handleKeyboardSymbolEnter(_ symbol: KeyboardSymbol,
+                                           callback: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.gameManager.handleKeyboardSymbolEnter(symbol)
+            
+            callback()
+        }
     }
 }
 

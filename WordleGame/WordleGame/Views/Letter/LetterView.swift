@@ -57,8 +57,11 @@ class LetterView: UIStackView {
     
     func updateLetterBoxSymbols(_ letterBoxArray: [[LetterBox?]]) {
         self.letterBoxArray = letterBoxArray
-        print(letterBoxArray)
-
+        
+                for subview in subviews {
+                    subview.removeFromSuperview()
+                }
+        
         self.createLetterBox()
     }
 }

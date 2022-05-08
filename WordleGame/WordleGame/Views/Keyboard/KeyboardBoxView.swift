@@ -12,6 +12,8 @@ class KeyboardBoxView: UIButton {
     
     private var keyboardBox: KeyboardBox!
     
+    var delegate: KeyboardButtonDelegate?
+    
     init(keyboardBox: KeyboardBox) {
         self.keyboardBox = keyboardBox
         
@@ -66,6 +68,7 @@ class KeyboardBoxView: UIButton {
     
     @objc private func handleButtonTap() {
         print(keyboardBox.symbol)
+        delegate?.handleButtonTap(keyboardBox.symbol)
     }
     
     // MARK: - View Update

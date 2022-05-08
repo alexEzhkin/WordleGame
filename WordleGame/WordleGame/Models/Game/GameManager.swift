@@ -8,22 +8,56 @@
 import Foundation
 
 struct GameManager {
-    let randomWord: String
-    let countOfLetters: Int
-    let countOfAttempts: Int
-    var arrayOfWordLetters: [LetterBox?] = []
-    var letterBoxArray: [[LetterBox?]] = []
     
-    init(randomWord: String) {
-        self.randomWord = randomWord
-        countOfLetters = randomWord.count
-        countOfAttempts = randomWord.count
+    private var currentLetterIndexInRow = 0
+    private var currentAttemptIndex = 0
+    
+    var randomWord: String = ""
+    
+    var countOfLetters: Int = 0
+    var countOfAttempts: Int = 0
+    
+    var gameField: [[LetterBox?]]
+    
+    init() {
+        self.randomWord = "World"
+        self.countOfLetters = randomWord.count
+        self.countOfAttempts = randomWord.count
+        let row: [LetterBox?] = Array(repeating: nil, count: countOfLetters)
         
-        for letter in randomWord {
-            arrayOfWordLetters.append(LetterBox(letter: String(letter), status: nil))
+        self.gameField = Array(repeating: row,
+                               count: countOfAttempts)
+        
+    }
+    
+//    func getRandomWordFromTXTFile() -> String {
+//        guard let path = Bundle.main.path(forResource: "AllowedWords", ofType: "txt"),
+//              let allowedWordsArray = try? String(contentsOfFile: path, encoding: String.Encoding.utf8).split(separator: "\n") else { return ""}
+//        let allowedWords = Set(allowedWordsArray)
+//        let randomWord = allowedWords.randomElement()
+//
+//        return String(randomWord ?? "")
+//    }
+    
+    mutating func handleKeyboardSymbolEnter(_ symbol: KeyboardSymbol) {
+        switch symbol {
+        case .enter:
+            print("")
+        case .delete:
+            print("")
+        case .character(let letter):
+            addLetter(letter)
         }
-        for numberOfLine in 0...countOfAttempts - 1 {
-            letterBoxArray.append(arrayOfWordLetters)
+    }
+    
+    private mutating func addLetter(_ letter: String) {
+        if currentLetterIndexInRow >= countOfLetters {
+            return
         }
+        
+        gameField[currentAttemptIndex][currentLetterIndexInRow] =
+            LetterBox(letter: letter, status: nil)
+        
+        currentLetterIndexInRow += 1
     }
 }
