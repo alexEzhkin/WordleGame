@@ -60,11 +60,11 @@ class LetterBoxView: UILabel {
     
     private func updateLabel(letter: String?) {
         self.text = letter?.uppercased()
-        self.textColor = .blue
+        self.textColor = .black
     }
     
     private func updateBackground(status: LetterEvaluation?) {
-        self.backgroundColor = status?.backgroundColor ?? .lightGray
+        self.backgroundColor = status?.backgroundColor ?? .white
     }
 }
 
