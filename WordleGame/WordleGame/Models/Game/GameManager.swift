@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 struct GameManager {
     
     private var currentLetterIndexInRow = 0
     private var currentAttemptIndex = 0
     
-    var resultWord: String = ""
+    private let resultWord: String
     
     var countOfLetters: Int = 0
     var countOfAttempts: Int = 0
@@ -20,7 +21,7 @@ struct GameManager {
     var gameField: [[LetterBox?]]
     
     init() {
-        self.resultWord = "World"
+        self.resultWord = getRandomWordFromTXTFile()
         self.countOfLetters = resultWord.count
         self.countOfAttempts = resultWord.count
         let row: [LetterBox?] = Array(repeating: nil, count: countOfLetters)
@@ -28,16 +29,15 @@ struct GameManager {
         self.gameField = Array(repeating: row,
                                count: countOfAttempts)
         
+        func getRandomWordFromTXTFile() -> String {
+            guard let path = Bundle.main.path(forResource: "AllowedWords", ofType: "txt"),
+                  let allowedWordsArray = try? String(contentsOfFile: path, encoding: String.Encoding.utf8).split(separator: "\n") else { return ""}
+            let allowedWords = Set(allowedWordsArray)
+            let randomWord = allowedWords.randomElement()
+
+            return String(randomWord ?? "")
+        }
     }
-    
-//    func getRandomWordFromTXTFile() -> String {
-//        guard let path = Bundle.main.path(forResource: "AllowedWords", ofType: "txt"),
-//              let allowedWordsArray = try? String(contentsOfFile: path, encoding: String.Encoding.utf8).split(separator: "\n") else { return ""}
-//        let allowedWords = Set(allowedWordsArray)
-//        let randomWord = allowedWords.randomElement()
-//
-//        return String(randomWord ?? "")
-//    }
     
     mutating func handleKeyboardSymbolEnter(_ symbol: KeyboardSymbol) {
         switch symbol {
