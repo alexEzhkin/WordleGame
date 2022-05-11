@@ -34,7 +34,6 @@ class LetterBoxView: UILabel {
     }
     
     private func setFont() {
-//        self.maxLength = 1
         self.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         self.textAlignment = .center
     }

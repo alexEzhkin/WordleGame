@@ -1,5 +1,5 @@
 //
-//  LetterView.swift
+//  GameFieldView.swift
 //  WordleGame
 //
 //  Created by Alex on 3.05.22.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class LetterView: UIStackView {
+class GameFieldView: UIStackView {
     
     var letterBoxArray: [[LetterBox?]]
     
@@ -58,9 +58,9 @@ class LetterView: UIStackView {
     func updateLetterBoxSymbols(_ letterBoxArray: [[LetterBox?]]) {
         self.letterBoxArray = letterBoxArray
         
-                for subview in subviews {
-                    subview.removeFromSuperview()
-                }
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
         
         self.createLetterBox()
     }

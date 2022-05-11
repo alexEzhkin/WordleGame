@@ -67,7 +67,6 @@ class KeyboardBoxView: UIButton {
     }
     
     @objc private func handleButtonTap() {
-        print(keyboardBox.symbol)
         delegate?.handleButtonTap(keyboardBox.symbol)
     }
     
