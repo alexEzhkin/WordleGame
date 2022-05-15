@@ -1,35 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WordleGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="WordleGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PBZ-Vt-upS" customClass="KeyboardView" customModule="WordleGame" customModuleProvider="target">
-                                <rect key="frame" x="15" y="621" width="384" height="221"/>
+                                <rect key="frame" x="15" y="621" width="570" height="221"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bum-4E-aTm" customClass="GameFieldView" customModule="WordleGame" customModuleProvider="target">
+                                <rect key="frame" x="15" y="74" width="570" height="284"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Bum-4E-aTm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="A8L-mJ-rHZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PBZ-Vt-upS" secondAttribute="bottom" constant="20" id="FE6-I0-bpB"/>
                             <constraint firstItem="PBZ-Vt-upS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="P5F-XY-mBk"/>
+                            <constraint firstItem="Bum-4E-aTm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="SNX-cP-8WT"/>
+                            <constraint firstItem="Bum-4E-aTm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SaX-U1-yir"/>
                             <constraint firstItem="PBZ-Vt-upS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="dnU-PC-WvI"/>
+                            <constraint firstItem="PBZ-Vt-upS" firstAttribute="top" secondItem="Bum-4E-aTm" secondAttribute="bottom" constant="30" id="lqb-DZ-25s"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="keyboardContainer" destination="PBZ-Vt-upS" id="5uA-Zy-3Hu"/>
+                        <outlet property="letterContainer" destination="Bum-4E-aTm" id="1Xe-Nz-gjp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-class LetterBoxView: UIView {
-    
-    @IBOutlet var contentView: UIView!
-    @IBOutlet weak var letterLabel: UILabel!
+class LetterBoxView: UILabel {
     
     private var letterBox: LetterBox?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(letterBox: LetterBox?) {
+        self.letterBox = letterBox
+        
+        super.init(frame: .zero)
+        
         setUpView()
     }
     
@@ -26,16 +26,30 @@ class LetterBoxView: UIView {
     }
     
     private func setUpView() {
-        createXib()
+        updateView(leterBox: letterBox)
+        
+        setFont()
+        setCornerRadius()
+        addConstrains()
     }
     
-    private func createXib() {
-        Bundle.main.loadNibNamed("LetterBoxView", owner: self, options: nil)
+    private func setFont() {
+        self.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        self.textAlignment = .center
+    }
+    
+    private func setCornerRadius() {
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    private func addConstrains() {
+        self.translatesAutoresizingMaskIntoConstraints = false
         
-        addSubview(contentView)
-        
-        contentView.frame = bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        NSLayoutConstraint.activate([
+            self.widthAnchor.constraint(equalTo: self.heightAnchor)
+        ])
     }
     
     func updateView(leterBox: LetterBox?) {
@@ -44,11 +58,12 @@ class LetterBoxView: UIView {
     }
     
     private func updateLabel(letter: String?) {
-        letterLabel.text = letter?.uppercased()
+        self.text = letter?.uppercased()
+        self.textColor = .black
     }
     
     private func updateBackground(status: LetterEvaluation?) {
-        contentView.backgroundColor = status?.backgroundColor ?? .clear
+        self.backgroundColor = status?.backgroundColor ?? .white
     }
 }
 

@@ -12,6 +12,8 @@ class KeyboardView: UIStackView {
     
     var keyboardSymbols: [[KeyboardBox]]
     
+    var delegate: KeyboardButtonDelegate?
+    
     init(keyboardSymbols: [[KeyboardBox]]) {
         self.keyboardSymbols = keyboardSymbols
         
@@ -49,6 +51,7 @@ class KeyboardView: UIStackView {
             
             for box in row {
                 let keyboardBoxView = KeyboardBoxView(keyboardBox: box)
+                keyboardBoxView.delegate = delegate
                 
                 stackView.addArrangedSubview(keyboardBoxView)
             }
