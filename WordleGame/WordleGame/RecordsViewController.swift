@@ -1,23 +1,17 @@
 //
-//  GameViewController.swift
+//  RecordsViewController.swift
 //  WordleGame
 //
-//  Created by Alex on 23.04.22.
+//  Created by Alex on 16.05.22.
 //
 
 import UIKit
 
-class GameViewController: UIViewController {
+class RecordsViewController: UIViewController {
 
-    @IBOutlet weak var keyboardContainer: KeyboardView!
-    @IBOutlet weak var letterContainer: GameFieldView!
-    
-    private var gameManager = GameManager()
-    private let keyboardManager = KeyboardManager()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let settingsBarButtonItem = UIBarButtonItem(
             title: NSString(string: "\u{2699}\u{0000FE0E}") as String,
             style: .done,
@@ -27,11 +21,6 @@ class GameViewController: UIViewController {
         let attributes = [NSAttributedString.Key.font : font]
         settingsBarButtonItem.setTitleTextAttributes(attributes, for: .normal)
         self.navigationItem.rightBarButtonItem  = settingsBarButtonItem
-        
-        letterContainer.updateLetterBoxSymbols(gameManager.gameField)
-        
-        keyboardContainer.delegate = self
-        keyboardContainer.updateKeyboardSymbols(keyboardManager.keyboardSymbols)
     }
     
     @objc func openSettings(){
@@ -41,12 +30,3 @@ class GameViewController: UIViewController {
         navigationController?.pushViewController(settingsViewController, animated: true)
     }
 }
-
-extension GameViewController: KeyboardButtonDelegate {
-    func handleButtonTap(_ symbol: KeyboardSymbol) {
-        gameManager.handleKeyboardSymbolEnter(symbol)
-
-        letterContainer.updateLetterBoxSymbols(gameManager.gameField)
-    }
-}
-

@@ -26,6 +26,9 @@
 		FAAFE7CC282141FA0016A7B5 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFE7CB282141FA0016A7B5 /* GameManager.swift */; };
 		FAAFE7CF282143950016A7B5 /* AllowedWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAAFE7CE282143950016A7B5 /* AllowedWords.txt */; };
 		FAAFE7D128217B720016A7B5 /* GameFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFE7D028217B720016A7B5 /* GameFieldView.swift */; };
+		FAD6948D2831987400DD501C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6948C2831987400DD501C /* MenuViewController.swift */; };
+		FAD6948F283198AC00DD501C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6948E283198AC00DD501C /* SettingsViewController.swift */; };
+		FAD694912831A2D600DD501C /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD694902831A2D600DD501C /* RecordsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		FAAFE7CB282141FA0016A7B5 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		FAAFE7CE282143950016A7B5 /* AllowedWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AllowedWords.txt; path = "../../../../../Documents/Курсы iOS/Занятие 17/AllowedWords.txt"; sourceTree = "<group>"; };
 		FAAFE7D028217B720016A7B5 /* GameFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldView.swift; sourceTree = "<group>"; };
+		FAD6948C2831987400DD501C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		FAD6948E283198AC00DD501C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FAD694902831A2D600DD501C /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 				FA2D775C28141C2900D9600F /* AppDelegate.swift */,
 				FA2D775E28141C2900D9600F /* SceneDelegate.swift */,
 				FA2D776028141C2900D9600F /* GameViewController.swift */,
+				FAD6948C2831987400DD501C /* MenuViewController.swift */,
+				FAD6948E283198AC00DD501C /* SettingsViewController.swift */,
+				FAD694902831A2D600DD501C /* RecordsViewController.swift */,
 				FA2D776228141C2900D9600F /* Main.storyboard */,
 				FA2D776528141C2D00D9600F /* Assets.xcassets */,
 				FA2D776728141C2D00D9600F /* LaunchScreen.storyboard */,
@@ -273,10 +282,13 @@
 				FA0E8C8D28189DDE000E9EB3 /* KeyboardView.swift in Sources */,
 				FA0E8C8B28189C31000E9EB3 /* KeyboardBoxView.swift in Sources */,
 				FA0E8C86281899BE000E9EB3 /* KeyboardSymbol.swift in Sources */,
+				FAD6948D2831987400DD501C /* MenuViewController.swift in Sources */,
 				FA2D775F28141C2900D9600F /* SceneDelegate.swift in Sources */,
 				FA0E8C8F28189FD1000E9EB3 /* KeyboardManager.swift in Sources */,
 				FA6652D82815561F004DE40A /* LetterBoxView.swift in Sources */,
+				FAD694912831A2D600DD501C /* RecordsViewController.swift in Sources */,
 				FA0E8C8828189BF3000E9EB3 /* KeyboardBox.swift in Sources */,
+				FAD6948F283198AC00DD501C /* SettingsViewController.swift in Sources */,
 				FA6652D628154D45004DE40A /* LetterBox.swift in Sources */,
 				FA45E843281D53600066C646 /* UIButton+Extension.swift in Sources */,
 				FAAFE7CC282141FA0016A7B5 /* GameManager.swift in Sources */,
