@@ -15,6 +15,8 @@ struct GameManager {
     
     private var resultWord: String!
     
+    var delegate: AlertDelegate?
+    
     var countOfLetters: Int = 0
     var countOfAttempts: Int = 0
     
@@ -141,10 +143,10 @@ struct GameManager {
     // MARK: Handle game end
     
     private func handleWin() {
-        print("Win")
+        self.delegate?.showAlert(alertText: "You Win", alertMessage: "Congratulations! To achieve victory, you needed \(currentAttemptIndex + 1) attempts" )
     }
     
     private func handleLose() {
-        print("Lose")
+        self.delegate?.showAlert(alertText: "You Lose", alertMessage: "Sorry. You have used all attempts. Try again or go to the main menu")
     }
 }
