@@ -12,7 +12,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var keyboardContainer: KeyboardView!
     @IBOutlet weak var letterContainer: GameFieldView!
     
-    private var gameManager = GameManager()
+    private var gameManager = GameManager() {
+        didSet {
+            gameManager.delegate = self
+        }
+    }
     private let keyboardManager = KeyboardManager()
     
     override func viewDidLoad() {
@@ -44,13 +48,9 @@ class GameViewController: UIViewController {
         navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
-    // Sorry! This is bad way to restart VC, i can improve that
-    
-    func restartGameViewController() {
-        guard let gameViewController = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "gameVC") as? GameViewController else { return }
-        navigationController?.popToRootViewController(animated: true)
-        navigationController?.pushViewController(gameViewController, animated: true)
+    func restartGame() {
+        gameManager = GameManager()
+        letterContainer.updateLetterBoxSymbols(gameManager.gameField)
     }
 }
 
@@ -71,7 +71,7 @@ extension GameViewController: AlertDelegate {
     
         let restartAction = UIAlertAction(title: "Restart",
                                        style: .default) { _ in
-            self.restartGameViewController()
+            self.restartGame()
         }
         let openMenuAction = UIAlertAction(title: "Menu",
                                            style: .default) { _ in
