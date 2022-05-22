@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA005B61283AD00900A98ECC /* GameResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA005B60283AD00900A98ECC /* GameResultDelegate.swift */; };
 		FA0E8C86281899BE000E9EB3 /* KeyboardSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E8C85281899BE000E9EB3 /* KeyboardSymbol.swift */; };
 		FA0E8C8828189BF3000E9EB3 /* KeyboardBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E8C8728189BF3000E9EB3 /* KeyboardBox.swift */; };
 		FA0E8C8B28189C31000E9EB3 /* KeyboardBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E8C8A28189C31000E9EB3 /* KeyboardBoxView.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA005B60283AD00900A98ECC /* GameResultDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultDelegate.swift; sourceTree = "<group>"; };
 		FA0E8C85281899BE000E9EB3 /* KeyboardSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSymbol.swift; sourceTree = "<group>"; };
 		FA0E8C8728189BF3000E9EB3 /* KeyboardBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBox.swift; sourceTree = "<group>"; };
 		FA0E8C8A28189C31000E9EB3 /* KeyboardBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBoxView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				FAA3AD3F282799E800F412D8 /* KeyboardButtonDelegate.swift */,
 				FA2C3FF62835855700937DE3 /* AlertDelegate.swift */,
+				FA005B60283AD00900A98ECC /* GameResultDelegate.swift */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				FA45E843281D53600066C646 /* UIButton+Extension.swift in Sources */,
 				FAAFE7CC282141FA0016A7B5 /* GameManager.swift in Sources */,
 				FAA3AD40282799E800F412D8 /* KeyboardButtonDelegate.swift in Sources */,
+				FA005B61283AD00900A98ECC /* GameResultDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

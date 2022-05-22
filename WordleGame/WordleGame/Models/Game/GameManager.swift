@@ -16,9 +16,12 @@ struct GameManager {
     private var resultWord: String!
     
     var delegate: AlertDelegate?
+    var resultDelegate: GameResultDelegate?
     
     var countOfLetters: Int = 0
     var countOfAttempts: Int = 0
+    
+    var scorePoints: Int = 0
     
     var gameField: [[LetterBox?]]!
     
@@ -69,6 +72,7 @@ struct GameManager {
         for (index, letter) in currentWord.enumerated() {
             if letter == resultWordArray[index] {
                 gameField[currentAttemptIndex][index]?.status = .rightLetterOnRightPlace
+                scorePoints += 2
                 
                 continue
             }
@@ -76,6 +80,7 @@ struct GameManager {
             // TODO: Update the condition to take letters number in count
             if resultWord.contains(letter) {
                 gameField[currentAttemptIndex][index]?.status = .rightLetterOutOfPlace
+                scorePoints += 1
                 
                 continue
             }
@@ -143,10 +148,12 @@ struct GameManager {
     // MARK: Handle game end
     
     private func handleWin() {
+        self.resultDelegate?.saveGameScore(score: scorePoints)
         self.delegate?.showAlert(alertText: "You Win", alertMessage: "Congratulations! To achieve victory, you needed \(currentAttemptIndex + 1) attempts" )
     }
     
     private func handleLose() {
+        self.resultDelegate?.saveGameScore(score: scorePoints)
         self.delegate?.showAlert(alertText: "You Lose", alertMessage: "Sorry. You have used all attempts. Try again or go to the main menu")
     }
 }
