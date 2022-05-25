@@ -19,9 +19,6 @@ class GameViewController: UIViewController {
     }
     private let keyboardManager = KeyboardManager()
     
-    var gameTime = 0
-    var timer: Timer?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,24 +35,9 @@ class GameViewController: UIViewController {
         letterContainer.updateLetterBoxSymbols(gameManager.gameField)
         
         gameManager.delegate = self
-        gameManager.resultDelegate = self
         
         keyboardContainer.delegate = self
         keyboardContainer.updateKeyboardSymbols(keyboardManager.keyboardSymbols)
-        
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        if self.isMovingFromParent {
-            timer?.invalidate()
-        }
-    }
-    
-    @objc func countdown() {
-        gameTime += 1
     }
     
     @objc func openSettings(){
@@ -65,27 +47,11 @@ class GameViewController: UIViewController {
         navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
-    func restartGame() {
+    func restartGame(userName: String) {
+        gameManager.saveData(userName: userName)
+        
         gameManager = GameManager()
         letterContainer.updateLetterBoxSymbols(gameManager.gameField)
-    }
-    
-    func saveGameResult(score: Int, time: Int) {
-        let gameResult = GameResult(score: score, time: time)
-        
-        guard let encodedObject = try? JSONEncoder().encode(gameResult) else {
-            return
-        }
-        
-        UserDefaults.standard.set(encodedObject, forKey: "gameResult")
-        
-        guard let objectData = UserDefaults.standard.data(forKey: "gameResult") else {
-            return
-        }
-        
-        guard let decodedObject = try? JSONDecoder().decode(GameResult.self, from: objectData) else {
-            return
-        }
     }
 }
 
@@ -103,33 +69,25 @@ extension GameViewController: AlertDelegate {
     let messageAlert = UIAlertController(title: alertText,
                                          message: alertMessage,
                                          preferredStyle: .alert)
+        
+        messageAlert.addTextField()
     
         let restartAction = UIAlertAction(title: "Restart",
                                        style: .default) { _ in
-            self.restartGame()
+            let userName = messageAlert.textFields?.first?.text ?? "username"
+            
+            self.restartGame(userName: userName)
         }
         let openMenuAction = UIAlertAction(title: "Menu",
                                            style: .default) { _ in
             self.navigationController?.popToRootViewController(animated: true)
         }
         
-        
         messageAlert.addAction(restartAction)
         messageAlert.addAction(openMenuAction)
     
     present(messageAlert, animated: true)
     }
-}
-
-extension GameViewController: GameResultDelegate {
-    func saveGameScore(score: Int) {
-        saveGameResult(score: score, time: gameTime)
-    }
-}
-
-struct GameResult: Codable {
-    let score: Int
-    let time: Int
 }
 
 

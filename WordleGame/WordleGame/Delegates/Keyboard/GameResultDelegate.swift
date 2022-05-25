@@ -2,7 +2,7 @@
 //  GameResultDelegate.swift
 //  WordleGame
 //
-//  Created by Alex on 22.05.22.
+//  Created by Alex on 26.05.22.
 //
 
 import Foundation

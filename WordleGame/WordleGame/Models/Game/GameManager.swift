@@ -8,12 +8,15 @@
 import Foundation
 import UIKit
 
-struct GameManager {
+class GameManager {
     
     private var currentLetterIndexInRow = 0
     private var currentAttemptIndex = 0
     
     private var resultWord: String!
+    
+    var gameTime = 0
+    var timer: Timer?
     
     var delegate: AlertDelegate?
     var resultDelegate: GameResultDelegate?
@@ -33,6 +36,12 @@ struct GameManager {
         
         self.gameField = Array(repeating: row,
                                count: countOfAttempts)
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
+    }
+    
+    @objc func countdown() {
+        gameTime += 1
     }
     
     func getRandomWordFromTXTFile() -> String {
@@ -44,7 +53,7 @@ struct GameManager {
         return String(randomWord ?? "")
     }
     
-    mutating func handleKeyboardSymbolEnter(_ symbol: KeyboardSymbol) {
+    func handleKeyboardSymbolEnter(_ symbol: KeyboardSymbol) {
         switch symbol {
         case .enter:
             checkWord()
@@ -57,7 +66,7 @@ struct GameManager {
     
     // MARK: Check Word
     
-    private mutating func checkWord() {
+    private func checkWord() {
         if currentLetterIndexInRow < countOfLetters ||
             currentAttemptIndex >= countOfAttempts {
             return
@@ -120,7 +129,7 @@ struct GameManager {
     
     // MARK: Delete symbol
     
-    private mutating func deleteLastLetter() {
+    private func deleteLastLetter() {
         let previousLetterIndex = currentLetterIndexInRow - 1
         
         if previousLetterIndex < 0 {
@@ -134,7 +143,7 @@ struct GameManager {
     
     // MARK: Add letter
     
-    private mutating func addLetter(_ letter: String) {
+    private func addLetter(_ letter: String) {
         if currentLetterIndexInRow >= countOfLetters {
             return
         }
@@ -155,5 +164,18 @@ struct GameManager {
     private func handleLose() {
         self.resultDelegate?.saveGameScore(score: scorePoints)
         self.delegate?.showAlert(alertText: "You Lose", alertMessage: "Sorry. You have used all attempts. Try again or go to the main menu")
+    }
+    
+    // MARK: Save data
+    
+    func saveData(userName: String) {
+        let gameResult = GameResult(userName: userName,
+                                    score: scorePoints,
+                                    time: gameTime)
+        
+        UserDefaultsService.shared.saveGameResult(gameResult)
+        
+        let gameResults = UserDefaultsService.shared.getGameResults()
+        print(gameResults)
     }
 }
