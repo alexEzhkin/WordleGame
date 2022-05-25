@@ -9,6 +9,11 @@ import UIKit
 
 class RecordsViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    let gameResults = UserDefaultsService.shared.getGameResults()
+    var gameResultsToTableView = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +26,12 @@ class RecordsViewController: UIViewController {
         let attributes = [NSAttributedString.Key.font : font]
         settingsBarButtonItem.setTitleTextAttributes(attributes, for: .normal)
         self.navigationItem.rightBarButtonItem  = settingsBarButtonItem
+        
+        gameResultsToTableView = gameResults.compactMap({$0.userName + " / Score: " + String($0.score) + " / Time: " + String($0.time)})
+        
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self,
+                               forCellReuseIdentifier: "TableViewCell")
     }
     
     @objc func openSettings(){
@@ -28,5 +39,18 @@ class RecordsViewController: UIViewController {
                 .instantiateViewController(withIdentifier: "settingsVC") as? SettingsViewController else { return }
         
         navigationController?.pushViewController(settingsViewController, animated: true)
+    }
+}
+
+extension RecordsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.gameResultsToTableView.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell",
+                                                     for: indexPath)
+            cell.textLabel?.text = self.gameResultsToTableView[indexPath.row]
+            return cell
     }
 }
