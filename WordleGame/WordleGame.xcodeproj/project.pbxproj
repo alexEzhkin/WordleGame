@@ -25,7 +25,6 @@
 		FA6652D82815561F004DE40A /* LetterBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6652D72815561F004DE40A /* LetterBoxView.swift */; };
 		FAA3AD40282799E800F412D8 /* KeyboardButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3AD3F282799E800F412D8 /* KeyboardButtonDelegate.swift */; };
 		FAAFE7CC282141FA0016A7B5 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFE7CB282141FA0016A7B5 /* GameManager.swift */; };
-		FAAFE7CF282143950016A7B5 /* AllowedWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAAFE7CE282143950016A7B5 /* AllowedWords.txt */; };
 		FAAFE7D128217B720016A7B5 /* GameFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFE7D028217B720016A7B5 /* GameFieldView.swift */; };
 		FABCA68D283ED4540040B9AF /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCA68C283ED4540040B9AF /* GameResult.swift */; };
 		FABCA690283ED48C0040B9AF /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCA68F283ED48C0040B9AF /* UserDefaultsService.swift */; };
@@ -33,6 +32,7 @@
 		FAD6948D2831987400DD501C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6948C2831987400DD501C /* MenuViewController.swift */; };
 		FAD6948F283198AC00DD501C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6948E283198AC00DD501C /* SettingsViewController.swift */; };
 		FAD694912831A2D600DD501C /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD694902831A2D600DD501C /* RecordsViewController.swift */; };
+		FAD792142844137600FAA900 /* AllowedWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAD792132844137600FAA900 /* AllowedWords.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +56,6 @@
 		FA6652D72815561F004DE40A /* LetterBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBoxView.swift; sourceTree = "<group>"; };
 		FAA3AD3F282799E800F412D8 /* KeyboardButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonDelegate.swift; sourceTree = "<group>"; };
 		FAAFE7CB282141FA0016A7B5 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
-		FAAFE7CE282143950016A7B5 /* AllowedWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AllowedWords.txt; path = "../../../../../Documents/Курсы iOS/Занятие 17/AllowedWords.txt"; sourceTree = "<group>"; };
 		FAAFE7D028217B720016A7B5 /* GameFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldView.swift; sourceTree = "<group>"; };
 		FABCA68C283ED4540040B9AF /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 		FABCA68F283ED48C0040B9AF /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		FAD6948C2831987400DD501C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FAD6948E283198AC00DD501C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FAD694902831A2D600DD501C /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		FAD792132844137600FAA900 /* AllowedWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AllowedWords.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +210,7 @@
 		FAAFE7CD282143750016A7B5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FAAFE7CE282143950016A7B5 /* AllowedWords.txt */,
+				FAD792132844137600FAA900 /* AllowedWords.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -290,7 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2D776928141C2D00D9600F /* LaunchScreen.storyboard in Resources */,
-				FAAFE7CF282143950016A7B5 /* AllowedWords.txt in Resources */,
+				FAD792142844137600FAA900 /* AllowedWords.txt in Resources */,
 				FA2D776628141C2D00D9600F /* Assets.xcassets in Resources */,
 				FA2D776428141C2900D9600F /* Main.storyboard in Resources */,
 			);

@@ -22,6 +22,17 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addSettingBarItem()
+        
+        letterContainer.updateLetterBoxSymbols(gameManager.gameField)
+        
+        gameManager.delegate = self
+        
+        keyboardContainer.delegate = self
+        keyboardContainer.updateKeyboardSymbols(keyboardManager.keyboardSymbols)
+    }
+    
+    func addSettingBarItem() {
         let settingsBarButtonItem = UIBarButtonItem(
             title: NSString(string: "\u{2699}\u{0000FE0E}") as String,
             style: .done,
@@ -31,13 +42,6 @@ class GameViewController: UIViewController {
         let attributes = [NSAttributedString.Key.font : font]
         settingsBarButtonItem.setTitleTextAttributes(attributes, for: .normal)
         self.navigationItem.rightBarButtonItem  = settingsBarButtonItem
-        
-        letterContainer.updateLetterBoxSymbols(gameManager.gameField)
-        
-        gameManager.delegate = self
-        
-        keyboardContainer.delegate = self
-        keyboardContainer.updateKeyboardSymbols(keyboardManager.keyboardSymbols)
     }
     
     @objc func openSettings(){
@@ -64,20 +68,26 @@ extension GameViewController: KeyboardButtonDelegate {
 }
 
 extension GameViewController: AlertDelegate {
+    func handleWin(numberOfAttempts: Int) {
+        showAlert(alertText: "You Win", alertMessage: "Congratulations! To achieve victory, you needed \(numberOfAttempts) attempts")
+    }
+    
+    func handleLose() {
+        showAlert(alertText: "You Lose", alertMessage: "Sorry. You have used all attempts. Try again or go to the main menu")
+    }
 
     func showAlert(alertText: String, alertMessage: String) {
-    let messageAlert = UIAlertController(title: alertText,
-                                         message: alertMessage,
-                                         preferredStyle: .alert)
-        
+        let messageAlert = UIAlertController(title: alertText,
+                                             message: alertMessage,
+                                             preferredStyle: .alert)
         messageAlert.addTextField()
-    
+        
         let restartAction = UIAlertAction(title: "Restart",
-                                       style: .default) { _ in
+                                          style: .default) { _ in
             let userName = messageAlert.textFields?.first?.text ?? "username"
-            
             self.restartGame(userName: userName)
         }
+        
         let openMenuAction = UIAlertAction(title: "Menu",
                                            style: .default) { _ in
             self.navigationController?.popToRootViewController(animated: true)
@@ -85,8 +95,8 @@ extension GameViewController: AlertDelegate {
         
         messageAlert.addAction(restartAction)
         messageAlert.addAction(openMenuAction)
-    
-    present(messageAlert, animated: true)
+        
+        present(messageAlert, animated: true)
     }
 }
 

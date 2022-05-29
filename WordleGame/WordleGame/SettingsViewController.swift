@@ -30,19 +30,11 @@ class SettingsViewController: UIViewController {
     }
     
     @objc func soundSwitchChanged(soundSwitch: UISwitch) {
-        if soundSwitch.isOn {
-            UserDefaults.standard.set(soundSwitch.isOn, forKey: "Sound Setting")
-        } else {
-            UserDefaults.standard.set(soundSwitch.isOn, forKey: "Sound Setting")
-        }
+        UserDefaults.standard.set(soundSwitch.isOn, forKey: "Sound Setting")
     }
     
     @objc func vibrationSwitchChanged(vibrationSwtich: UISwitch) {
-        if vibrationSwtich.isOn {
-            UserDefaults.standard.set(vibrationSwtich.isOn, forKey: "Vibration Setting")
-        } else {
-            UserDefaults.standard.set(vibrationSwtich.isOn, forKey: "Vibration Setting")
-        }
+        UserDefaults.standard.set(vibrationSwtich.isOn, forKey: "Vibration Setting")
     }
 }
 

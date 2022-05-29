@@ -158,12 +158,11 @@ class GameManager {
     
     private func handleWin() {
         self.resultDelegate?.saveGameScore(score: scorePoints)
-        self.delegate?.showAlert(alertText: "You Win", alertMessage: "Congratulations! To achieve victory, you needed \(currentAttemptIndex + 1) attempts" )
+        self.delegate?.handleWin(numberOfAttempts: currentAttemptIndex + 1)
     }
     
     private func handleLose() {
-        self.resultDelegate?.saveGameScore(score: scorePoints)
-        self.delegate?.showAlert(alertText: "You Lose", alertMessage: "Sorry. You have used all attempts. Try again or go to the main menu")
+        self.delegate?.handleLose()
     }
     
     // MARK: Save data

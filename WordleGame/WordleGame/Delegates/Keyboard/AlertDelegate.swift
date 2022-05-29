@@ -8,5 +8,7 @@
 import Foundation
 
 protocol AlertDelegate {
+    func handleWin(numberOfAttempts: Int)
+    func handleLose()
     func showAlert(alertText : String, alertMessage : String)
 }
