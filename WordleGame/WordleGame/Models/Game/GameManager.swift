@@ -8,15 +8,23 @@
 import Foundation
 import UIKit
 
-struct GameManager {
+class GameManager {
     
     private var currentLetterIndexInRow = 0
     private var currentAttemptIndex = 0
     
     private var resultWord: String!
     
+    var gameTime = 0
+    var timer: Timer?
+    
+    var delegate: GameDelegate?
+    var resultDelegate: GameResultDelegate?
+    
     var countOfLetters: Int = 0
     var countOfAttempts: Int = 0
+    
+    var scorePoints: Int = 0
     
     var gameField: [[LetterBox?]]!
     
@@ -28,6 +36,12 @@ struct GameManager {
         
         self.gameField = Array(repeating: row,
                                count: countOfAttempts)
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
+    }
+    
+    @objc func countdown() {
+        gameTime += 1
     }
     
     func getRandomWordFromTXTFile() -> String {
@@ -39,7 +53,7 @@ struct GameManager {
         return String(randomWord ?? "")
     }
     
-    mutating func handleKeyboardSymbolEnter(_ symbol: KeyboardSymbol) {
+    func handleKeyboardSymbolEnter(_ symbol: KeyboardSymbol) {
         switch symbol {
         case .enter:
             checkWord()
@@ -52,7 +66,7 @@ struct GameManager {
     
     // MARK: Check Word
     
-    private mutating func checkWord() {
+    private func checkWord() {
         if currentLetterIndexInRow < countOfLetters ||
             currentAttemptIndex >= countOfAttempts {
             return
@@ -67,6 +81,7 @@ struct GameManager {
         for (index, letter) in currentWord.enumerated() {
             if letter == resultWordArray[index] {
                 gameField[currentAttemptIndex][index]?.status = .rightLetterOnRightPlace
+                scorePoints += 2
                 
                 continue
             }
@@ -74,6 +89,7 @@ struct GameManager {
             // TODO: Update the condition to take letters number in count
             if resultWord.contains(letter) {
                 gameField[currentAttemptIndex][index]?.status = .rightLetterOutOfPlace
+                scorePoints += 1
                 
                 continue
             }
@@ -113,7 +129,7 @@ struct GameManager {
     
     // MARK: Delete symbol
     
-    private mutating func deleteLastLetter() {
+    private func deleteLastLetter() {
         let previousLetterIndex = currentLetterIndexInRow - 1
         
         if previousLetterIndex < 0 {
@@ -127,7 +143,7 @@ struct GameManager {
     
     // MARK: Add letter
     
-    private mutating func addLetter(_ letter: String) {
+    private func addLetter(_ letter: String) {
         if currentLetterIndexInRow >= countOfLetters {
             return
         }
@@ -141,10 +157,21 @@ struct GameManager {
     // MARK: Handle game end
     
     private func handleWin() {
-        print("Win")
+        self.resultDelegate?.saveGameScore(score: scorePoints)
+        self.delegate?.handleWin(numberOfAttempts: currentAttemptIndex + 1)
     }
     
     private func handleLose() {
-        print("Lose")
+        self.delegate?.handleLose()
+    }
+    
+    // MARK: Save data
+    
+    func saveData(userName: String) {
+        let gameResult = GameResult(userName: userName,
+                                    score: scorePoints,
+                                    time: gameTime)
+        
+        UserDefaultsService.shared.saveGameResult(gameResult)
     }
 }
