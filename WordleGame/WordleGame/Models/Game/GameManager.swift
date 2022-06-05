@@ -18,7 +18,7 @@ class GameManager {
     var gameTime = 0
     var timer: Timer?
     
-    var delegate: AlertDelegate?
+    var delegate: GameDelegate?
     var resultDelegate: GameResultDelegate?
     
     var countOfLetters: Int = 0
@@ -173,8 +173,5 @@ class GameManager {
                                     time: gameTime)
         
         UserDefaultsService.shared.saveGameResult(gameResult)
-        
-        let gameResults = UserDefaultsService.shared.getGameResults()
-        print(gameResults)
     }
 }

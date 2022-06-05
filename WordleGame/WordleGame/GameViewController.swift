@@ -67,7 +67,7 @@ extension GameViewController: KeyboardButtonDelegate {
     }
 }
 
-extension GameViewController: AlertDelegate {
+extension GameViewController: GameDelegate {
     func handleWin(numberOfAttempts: Int) {
         showAlert(alertText: "You Win", alertMessage: "Congratulations! To achieve victory, you needed \(numberOfAttempts) attempts")
     }
@@ -91,6 +91,8 @@ extension GameViewController: AlertDelegate {
         let openMenuAction = UIAlertAction(title: "Menu",
                                            style: .default) { _ in
             self.navigationController?.popToRootViewController(animated: true)
+            let userName = messageAlert.textFields?.first?.text ?? "username"
+            self.gameManager.saveData(userName: userName)
         }
         
         messageAlert.addAction(restartAction)
